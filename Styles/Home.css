@@ -9,13 +9,12 @@
 body{
     width: 100%;
     height: 100%;
-    margin: auto;
+    margin: 0;
     background-color: #ffffff;
 }
 
 /*Header Styles*/
 header{
-    display: block;
     text-align: center;
     
     padding: 20px;
@@ -63,7 +62,8 @@ header .info a{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    
+    flex-direction: row;
+
     width: 1000px;
 
     position: relative;
