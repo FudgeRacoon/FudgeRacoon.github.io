@@ -1,0 +1,187 @@
+/*All Elements Styles*/
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/*Body Styles*/
+body{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: #ffffff;
+}
+
+/*Header Styles*/
+header{
+    display: block;
+    text-align: center;
+    
+    padding: 20px;
+
+    width: 100%;
+    height: auto;
+
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' %3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(185,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23801250'/%3E%3Cstop offset='1' stop-color='%23ff0f0f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpattern id='b' width='48' height='48' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%23ffffff' cx='24' cy='24' r='24'/%3E%3C/pattern%3E%3Crect width='100%25' height='100%25' fill='url(%23a)'/%3E%3Crect width='100%25' height='100%25' fill='url(%23b)' fill-opacity='0.12'/%3E%3C/svg%3E");
+    background-size: cover;
+    border-bottom: 2px solid black;
+}
+header .title h1{
+    font-size: 5em;
+    color: #FFF7F6;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+}
+header .info a{
+    font-size: 1.5em;
+    color: #FFF7F6;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+/*Container-1 Styles*/
+.container-1{
+    display: block;
+    text-align: center;
+
+    margin: auto;
+    padding: 20px;
+
+    width: 80%;
+}
+.container-1 p{
+    font-size: 1.3em;
+}
+
+/*Container-2 Styles*/
+.container-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-2 .cards-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    width: 1000px;
+
+    position: relative;
+}
+.container-2 .cards-container .card{
+    position: relative;
+}
+.container-2 .cards-container .card .face{
+    width: 300px;
+    height: 200px;
+
+    transition: 300ms;
+}
+.container-2 .cards-container .card .face.face-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    z-index: 1;
+
+    background-color: #6f0f41;
+
+    border-radius: 35px 35px 0 0;
+
+    transform: translateY(70px);
+}
+.container-2 .cards-container .card .face.face-1 .content img{
+    border-radius: 5px
+}
+.container-2 .cards-container .card .face.face-1 .content h3{
+    margin: 10px 0 0;
+    padding: 0;
+
+    text-align: center;
+
+    color: #fff;
+}
+.container-2 .cards-container .card .face.face-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    background-color: #fff;
+
+    border-radius: 0 0 35px 35px;
+
+    padding: 20px;
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.8);
+
+    transform: translateY(-100px);
+}
+.container-2 .cards-container .card .face.face-2 .content p{
+    margin: 0;
+    padding: 0;
+}
+.container-2 .cards-container .card .face.face-2 .content a{
+    display: inline-block;
+
+    text-decoration: none;
+    font-weight: 900;
+    color: #6f0f41;
+
+    margin: 15px 0 0;
+    padding: 5px;    
+
+    border: 1px solid #6f0f41;
+}
+
+/*Container-3 Styles*/
+.container-3{
+    display: block;
+    margin: auto;
+    padding: 50px 0 50px 0;
+    width: 1000px;
+    text-align: justify;
+}
+.container-3 header{
+    text-align: left;
+    border-top: 2px solid black;
+}
+.container-3 h3{
+    font-size: 1.5em;
+    color: #FFF7F6;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+}
+.container-3 p.info{
+    font-size: 1.3em;
+    padding: 20px;
+}
+
+/*Footer Styles*/
+footer{
+    padding: 37px;
+
+    width: 100%;
+    height: auto;
+
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' %3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(185,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23801250'/%3E%3Cstop offset='1' stop-color='%23ff0f0f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpattern id='b' width='48' height='48' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%23ffffff' cx='24' cy='24' r='24'/%3E%3C/pattern%3E%3Crect width='100%25' height='100%25' fill='url(%23a)'/%3E%3Crect width='100%25' height='100%25' fill='url(%23b)' fill-opacity='0.12'/%3E%3C/svg%3E");
+    background-size: cover;
+    border-top: 2px solid black;
+}
+footer h3{
+    color: #FFF7F6;
+}
+
+/*Card Hover Effects*/
+.container-2 .cards-container .card .face.face-2 .content a:hover{
+    background-color: #6f0f41;
+    color: #fff;
+}
+.container-2 .cards-container .card:hover .face.face-1{
+    background-color: #a5123e; 
+    transform: translateY(0px);
+}
+.container-2 .cards-container .card:hover .face.face-2{
+    transform: translateY(0px);
+}
