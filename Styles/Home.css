@@ -218,11 +218,40 @@ footer h3{
         width: 80%;
     }
     .container-1 p{
-        font-size: 1em;
+        font-size: 1.1em;
     }
 
-    .container-2 .cards-container{
-        
+    .container-2 .cards-container .card{
+        width: 150px;
+    }
+    .container-2 .cards-container .card .face{
+        width: 150px;
+        height: 100px;
+    }
+    .container-2 .cards-container .card .face.face-1{
+        border-radius: 25px 25px 0 0;
+        transform: translateY(30px);
+    }
+    .container-2 .cards-container .card .face.face-1 .content img{
+        width: 65px;
+        height: 65px;
+    }
+    .container-2 .cards-container .card .face.face-1 .content h3{
+        margin: 5px 0 0;
+        font-size: 0.7em;
+    }
+    .container-2 .cards-container .card .face.face-2{ 
+        border-radius: 0 0 25px 25px;   
+        padding: 10px;
+        transform: translateY(-50px);
+    }
+    .container-2 .cards-container .card .face.face-2 .content p{
+        font-size: 0.5em;
+    }
+    .container-2 .cards-container .card .face.face-2 .content a{
+        margin: 5px 0 0;
+        padding: 2px;
+        font-size: 0.5em;
     }
 
     .container-3{
@@ -232,7 +261,7 @@ footer h3{
         font-size: 1.15em;
     }
     .container-3 p.info{
-        font-size: 1em;
+        font-size: 1.1em;
     }
 
     footer h3{
