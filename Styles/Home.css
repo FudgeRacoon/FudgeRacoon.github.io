@@ -72,17 +72,17 @@ header .info a{
     flex-wrap: wrap;
     flex-direction: row;
 
-    width: 65%;
+    width: 1000px;
 
     position: relative;
 }
 .container-2 .cards-container .card{
+    width: 300px;
     position: relative;
 }
 .container-2 .cards-container .card .face{
     width: 300px;
     height: 200px;
-
     transition: 300ms;
 }
 .container-2 .cards-container .card .face.face-1{
@@ -219,6 +219,10 @@ footer h3{
     }
     .container-1 p{
         font-size: 1em;
+    }
+
+    .container-2 .cards-container{
+        
     }
 
     .container-3{
