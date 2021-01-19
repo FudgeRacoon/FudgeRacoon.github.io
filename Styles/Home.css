@@ -221,37 +221,43 @@ footer h3{
         font-size: 1.1em;
     }
 
+    .container-2 .cards-container{
+        align-items: center;
+        flex-direction: column;
+    
+        width: 1000px;
+    }
     .container-2 .cards-container .card{
-        width: 150px;
+        width: 200px;
     }
     .container-2 .cards-container .card .face{
-        width: 150px;
-        height: 100px;
+        width: 200px;
+        height: 150px;
     }
     .container-2 .cards-container .card .face.face-1{
         border-radius: 25px 25px 0 0;
-        transform: translateY(30px);
+        transform: translateY(50px);
     }
     .container-2 .cards-container .card .face.face-1 .content img{
-        width: 65px;
-        height: 65px;
+        width: 90px;
+        height: 90px;
     }
     .container-2 .cards-container .card .face.face-1 .content h3{
         margin: 5px 0 0;
-        font-size: 0.7em;
+        font-size: 0.75em;
     }
     .container-2 .cards-container .card .face.face-2{ 
         border-radius: 0 0 25px 25px;   
         padding: 10px;
-        transform: translateY(-50px);
+        transform: translateY(-75px);
     }
     .container-2 .cards-container .card .face.face-2 .content p{
-        font-size: 0.5em;
+        font-size: 0.75em;
     }
     .container-2 .cards-container .card .face.face-2 .content a{
-        margin: 5px 0 0;
-        padding: 2px;
-        font-size: 0.5em;
+        margin: 10px 0 0;
+        padding: 5px;
+        font-size: 0.75em;
     }
 
     .container-3{
