@@ -14,7 +14,9 @@ html{
 body{
     width: 80%;
     height: 100%;
+
     margin: auto;
+
     background-color: #ffffff;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.8);
 }
@@ -47,12 +49,12 @@ header .info a{
 /*Container-1 Styles*/
 .container-1{
     display: block;
-    text-align: center;
+    text-align: justify;
 
     margin: auto;
     padding: 20px;
 
-    width: 80%;
+    width: 800px;
 }
 .container-1 p{
     font-size: 1.3em;
@@ -70,7 +72,7 @@ header .info a{
     flex-wrap: wrap;
     flex-direction: row;
 
-    width: 1000px;
+    width: 65%;
 
     position: relative;
 }
@@ -144,10 +146,12 @@ header .info a{
 /*Container-3 Styles*/
 .container-3{
     display: block;
-    margin: auto;
-    padding: 50px 0 50px 0;
-    width: 1000px;
     text-align: justify;
+
+    margin: auto;
+    padding: 40px 0 10px 0;
+
+    width: 800px;
 }
 .container-3 header{
     text-align: left;
@@ -177,6 +181,7 @@ footer{
 }
 footer h3{
     color: #FFF7F6;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
 }
 
 /*Card Hover Effects*/
@@ -190,4 +195,43 @@ footer h3{
 }
 .container-2 .cards-container .card:hover .face.face-2{
     transform: translateY(0px);
+}
+
+@media (max-width: 1000px){
+    html{
+        background-color: #ffffff;
+        background-image: none;
+    }
+
+    body{
+        width: 100%;
+    }
+
+    header .title h1{
+        font-size: 2.5em;
+    }
+    header .info a{
+        font-size: 1.15em;
+    }
+
+    .container-1 {
+        width: 80%;
+    }
+    .container-1 p{
+        font-size: 1em;
+    }
+
+    .container-3{
+        width: 100%;
+    }
+    .container-3 h3{
+        font-size: 1.15em;
+    }
+    .container-3 p.info{
+        font-size: 1em;
+    }
+
+    footer h3{
+        font-size: 1em;
+    }
 }
