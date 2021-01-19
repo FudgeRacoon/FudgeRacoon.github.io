@@ -68,7 +68,7 @@ header .info a{
 }
 .container-2 .cards-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
 
@@ -78,6 +78,8 @@ header .info a{
 }
 .container-2 .cards-container .card{
     width: 300px;
+    margin-left: 15px;
+    margin-right: 15px;
     position: relative;
 }
 .container-2 .cards-container .card .face{
@@ -169,8 +171,6 @@ header .info a{
 
 /*Footer Styles*/
 footer{
-    flex-shrink: 0;
-    
     padding: 37px;
 
     width: 100%;
@@ -223,12 +223,6 @@ footer h3{
         font-size: 1.1em;
     }
 
-    .container-2 .cards-container{
-        align-items: center;
-        flex-direction: column;
-    
-        width: 1000px;
-    }
     .container-2 .cards-container .card{
         width: 200px;
     }
