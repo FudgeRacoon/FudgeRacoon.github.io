@@ -17,7 +17,7 @@ body{
 
     margin: auto;
 
-    background-color: #ffffff;
+    background-color: #FDF8F5;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.8);
 }
 
@@ -73,6 +73,7 @@ footer h3{
 
     body{
         width: 100%;
+        background-color: #ffffff;
     }
 
     header .title h1{
