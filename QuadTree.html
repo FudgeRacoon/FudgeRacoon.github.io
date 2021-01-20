@@ -30,7 +30,34 @@
             </section>
         </header>
         
-        
+        <div class="container-1">
+            <section>
+                <p>
+                    Since the dawn of the first video game, collision has always been a part of any game created.
+                    Lots of collision algorithms are out there, some are easy to master and some are not. However, any collision
+                    system implemented must have some way to check if the interaction between two objects actually occurs. Checking
+                    for collisions between a few objects in a scene is relatively easy. Altough, when it comes to checking for collision
+                    between hundreds, or even thousands of objects using the dreaded pairwise comparison, that will take a great toll on
+                    performance. Luckily, there exists many collision checks that offer efficiency and speed. One of which is the quad tree
+                    data structure.
+                </p>
+            </section>
+
+            <section>
+                <header>
+                    <h3>What is a quad tree</h3>
+                </header>
+                <p>
+                    A quad tree is a tree data structure used in spatial partitioning, so that it's easy to traverse
+                    and search. You may be wondering what exactly is spatial partitioning? To put it in simple terms,
+                    spatial partitioning is the process of subdiving a scene into multiple regions, and that is exactly
+                    what a quad tree does. It recursivly subdivids a game's world into smaller and smaller sections.
+                    Genrally, a quad tree must fulfill a certain criteria where each non-leaf node must have four children,
+                    every leaf node has a maximum number of objects and if that number is exceeded the node is split.
+                </p>
+                <img src="Images/Quad Tree/Quad tree_1.png"/>
+            </section>
+        </div>
 
        <footer>
            <h3>&copy; Copyright 2021 FudgeRacoon</h3>

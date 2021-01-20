@@ -60,12 +60,12 @@ header .info a{
     text-align: justify;
 
     margin: auto;
-    padding: 20px;
 
     width: 800px;
 }
 .container-1 p{
     font-size: 1.3em;
+    padding: 30px;
 }
 
 /*Container-2 Styles*/
@@ -176,7 +176,7 @@ header .info a{
 }
 .container-3 p.info{
     font-size: 1.3em;
-    padding: 20px;
+    padding: 30px;
 }
 
 /*Footer Styles*/
@@ -234,7 +234,7 @@ footer h3{
         width: 80%;
     }
     .container-1 p{
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     .container-2 .cards-container .card{
@@ -277,7 +277,7 @@ footer h3{
         font-size: 1.15em;
     }
     .container-3 p.info{
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     footer h3{
