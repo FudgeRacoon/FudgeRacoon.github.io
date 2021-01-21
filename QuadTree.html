@@ -55,12 +55,34 @@
                     and search. You may be wondering what exactly is spatial partitioning? To put it in simple terms,
                     spatial partitioning is the process of subdiving a scene into multiple regions, and that is exactly
                     what a quad tree does. It recursivly subdivids a game's world into smaller and smaller sections.
-                    Genrally, a quad tree must fulfill a certain criteria where each non-leaf node must have four children,
+                    Generally, a quad tree must fulfill a certain criteria where each non-leaf node must have four children,
                     every leaf node has a maximum number of objects and if that number is exceeded the node is split.
                 </p>
                 <div id="scene">
-                    <img src="Images/Quad_Tree/Block_1/Nodes.png" data-depth="0.4">
+                    <img src="Images/Quad_Tree/Block_1/Nodes.png" data-depth="0.5">
                 </div>
+                <p>
+                    An important point to keep track of is that the leaf nodes only store data, while the parent nodes
+                    store info on how to get to their children. As seen in the above diagram, the root node reached the
+                    maximum number of objects allowed to be stored therefore it has split creating four children each 
+                    holding the objects according to their postion in the world.
+                </p>
+            </section>
+
+            <section>
+                <header>
+                    <h3>How does a quad tree work</h3>
+                </header>
+                <p>
+                    As mentioned above, the whole purpose of a quad tree is to subdivide the world and arrange objects in that
+                    world in various nodes. But why do we subdivide exactly and how is it done? The whole premise of subdivision
+                    is to group objects that are close to each other and have a high possibility to collide with one another. This 
+                    ultimately reduces the number of checks needed and in return boosts performance. Any quad tree starts with a root
+                    node holding the scene boundry and all the objects inside that scene, once the number of objects exceed the node's
+                    limit the boundry is divided into quadrants. Each quadrant is held by it's respective node and all objects that where
+                    held by the parent node in our case the root will be checked by each child node if they are within their boundries or not,
+                    if true then they're transfered if false the other nodes will be checked.
+                </p>
             </section>
         </div>
 
