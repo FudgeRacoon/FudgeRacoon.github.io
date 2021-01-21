@@ -111,6 +111,16 @@ footer h3{
         font-size: 1.15em;
     }
 
+    .container-1 section{
+        width: 100%;
+    }
+    .container-1 section header h3{
+        font-size: 1.15em;
+    }
+    .container-1 section p{
+        font-size: 1em;
+    }
+
     footer h3{
         font-size: 1em;
     }
