@@ -14,6 +14,9 @@
 
         <!--Icons-->
         <link rel="icon" href="Icon/Icon.png" type="image/x-icon">
+        
+        <!--Scripts-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 
         <!--StyleSheet-->
         <link rel="stylesheet" type="text/css" href="Styles/QuadTree.css">
@@ -55,13 +58,21 @@
                     Genrally, a quad tree must fulfill a certain criteria where each non-leaf node must have four children,
                     every leaf node has a maximum number of objects and if that number is exceeded the node is split.
                 </p>
-                <img src="Images/Quad Tree/Quad tree_1.png"/>
+                <div id="scene">
+                    <img src="Images/Quad_Tree/Block_1/Nodes.png" data-depth="0.4">
+                </div>
             </section>
         </div>
 
        <footer>
            <h3>&copy; Copyright 2021 FudgeRacoon</h3>
        </footer>
+
+
+       <script type="text/javascript">
+            let scene = document.getElementById("scene");
+            let parallaxInstance = new Parallax(scene);
+       </script>
 
     </body>
 </html>
