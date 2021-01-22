@@ -70,6 +70,9 @@ header .info a{
 .container-1 section #scene img{
     width: 100%;
 }
+.container-1 section #drawing-container{
+    padding: 30px;
+}
 .container-1 section p{
     font-size: 1.3em;
     padding: 30px;

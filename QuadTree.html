@@ -17,6 +17,7 @@
         
         <!--Scripts-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+        <script src="Libs/p5.js"></script>
 
         <!--StyleSheet-->
         <link rel="stylesheet" type="text/css" href="Styles/QuadTree.css">
@@ -83,6 +84,9 @@
                     held by the parent node in our case the root will be checked by each child node if they are within their boundries or not,
                     if true then they're transfered if false the other nodes will be checked.
                 </p>
+                <div id="drawing-container">
+
+                </div>
             </section>
         </div>
 
@@ -90,7 +94,12 @@
            <h3>&copy; Copyright 2021 FudgeRacoon</h3>
        </footer>
 
-
+       <script src="Scripts/point.js"></script>
+       <script src="Scripts/bounds.js"></script>
+       <script src="Scripts/queue.js"></script>
+       <script src="Scripts/quad_tree.js"></script>
+       <script src="Scripts/main.js"></script>
+       
        <script type="text/javascript">
             let scene = document.getElementById("scene");
             let parallaxInstance = new Parallax(scene);
