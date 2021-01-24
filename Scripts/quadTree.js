@@ -1,7 +1,6 @@
 class QuadTreeNode
 {
     /***Member fields**/
-    maxNumOfObjects;
     nodeBounds;
     data;
     
@@ -14,8 +13,6 @@ class QuadTreeNode
     constructor(nodeBounds)
     {
         this.nodeBounds = nodeBounds;
-
-        this.maxNumOfObjects = 1;
         this.data = new Array();
 
         this.neChild = null;
@@ -24,7 +21,6 @@ class QuadTreeNode
         this.swChild = null;
     }
 }
-
 class QuadTree
 {   
     /***Member fields***/
@@ -114,7 +110,7 @@ class QuadTree
         {
             let processing = process.Pop();
 
-            if(this.IsLeaf(processing) && this.InBoundry(object, processing) && (processing.data.length + 1 > 1))
+            if(this.IsLeaf(processing) && this.InBoundry(object, processing) && (processing.data.length + 1 > slider.value))
             {
                 if(this.currentDepth >= this.maxDepth)
                     return;
@@ -173,5 +169,12 @@ class QuadTree
 
             processing.nodeBounds.Draw();
         }
+    }
+    Reset()
+    {
+        this.root.nwChild = null;
+        this.root.neChild = null;
+        this.root.swChild = null;
+        this.root.seChild = null;
     }
 }

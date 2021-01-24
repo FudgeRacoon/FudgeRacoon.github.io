@@ -59,7 +59,7 @@
                     Generally, a quad tree must fulfill a certain criteria where each non-leaf node must have four children,
                     every leaf node has a maximum number of objects and if that number is exceeded the node is split.
                 </p>
-                <div id="scene">
+                <div class="scene">
                     <img src="Images/Quad_Tree/Block_1/Nodes.png" data-depth="0.5">
                 </div>
                 <p>
@@ -83,8 +83,21 @@
                     limit the boundry is divided into quadrants. Each quadrant is held by it's respective node and all objects that where
                     held by the parent node in our case the root will be checked by each child node if they are within their boundries or not,
                     if true then they're transfered if false the other nodes will be checked.
+                    <br>
+                    <br>
+                    <strong>Press the left mouse button</strong> to draw a point in the scene below, and <strong>adjust the slider</strong>
+                    to configure the maximum number of points a single node can hold. <strong>Press the reset button</strong> if you want to
+                    start over.
                 </p>
-                <div id="drawing-container">
+                <div class="drawing-container">
+
+                </div>
+                <p>
+                    So, how do we implement this? To build a quad tree we first need to create a root node. A quad tree node consists of an array
+                    that stores the objects, a pointer to it's four children and it's boundary. It's only a few lines in C++.
+                </p>
+                <div class="scene">
+                    <img src="Images/Quad_Tree/Block_2/QuadTreeNode_Snippet.png" data-depth="0.5">
                 </div>
             </section>
         </div>
@@ -93,14 +106,19 @@
            <h3>&copy; Copyright 2021 FudgeRacoon</h3>
        </footer>
 
+       <!--Scripts-->
        <script src="Scripts/Geometry.js"></script>
        <script src="Scripts/queue.js"></script>
-       <script src="Scripts/quad_tree.js"></script>
+       <script src="Scripts/quadTree.js"></script>
        <script src="Scripts/quadTreeVisulization_1.js"></script>
        
        <script type="text/javascript">
-            let scene = document.getElementById("scene");
-            let parallaxInstance = new Parallax(scene);
+            let scenes = document.getElementsByClassName("scene");
+            
+            for(let scene of scenes)
+            {
+                let parallaxInstance = new Parallax(scene);
+            }
        </script>
 
     </body>
