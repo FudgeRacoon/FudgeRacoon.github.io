@@ -1,3 +1,21 @@
+class Point
+{
+    posX;
+    posY;
+
+    constructor(posX, posY)
+    {
+        this.posX = posX;
+        this.posY = posY;
+    }
+
+    Draw()
+    {
+        noStroke();
+        fill("#FFFFFF");
+        circle(this.posX, this.posY, 5);
+    }
+}
 class Bounds
 {
     posX;
@@ -15,8 +33,8 @@ class Bounds
 
     Draw()
     {
-        stroke(255, 255, 255);
-        strokeWeight(1);
+        stroke(0, 0, 0);
+        strokeWeight(2);
         noFill();
         rect(this.posX, this.posY, this.width, this.height);
     }

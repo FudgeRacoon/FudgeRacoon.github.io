@@ -40,7 +40,9 @@ class QuadTree
         this.maxDepth = maxDepth;
         this.quadrants = new Array(4);
 
-        let boundary = new Bounds(0, 0, 500, 500);
+        let canvasSize = canvas.size();
+
+        let boundary = new Bounds(0, 0, canvasSize.width, canvasSize.height);
         this.root = new QuadTreeNode(boundary);
     }
 
