@@ -6,10 +6,13 @@ class Point
     constructor(posX, posY)
     {
         this.posX = posX;
-        this.PosY = posY;
+        this.posY = posY;
+    }
 
+    Draw()
+    {
         noStroke();
         fill(255, 0, 0);
-        circle(posX, posY, 10);
+        circle(this.posX, this.posY, 5);
     }
 }

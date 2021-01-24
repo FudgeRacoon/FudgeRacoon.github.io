@@ -1,14 +1,23 @@
 var canvas;
 var drawingContainer;
+var quadTree;
+var points;
 
 function setup()
 {
     InitCanvas();
+
+    quadTree = new QuadTree(10);
+    points = new Array();
 }
 
 function draw()
 {
-    
+    background(0, 0, 0);
+
+    canvas.mousePressed(InsertPoint);
+    RenderPoints();
+    quadTree.Render();
 }
 
 function InitCanvas()
@@ -17,9 +26,20 @@ function InitCanvas()
 
     canvas = createCanvas(500, 500);
     canvas.parent(drawingContainer);
+}
+function InsertPoint()
+{
+    let point = new Point(mouseX, mouseY);
 
-    canvas.style("border", "5px solid #6f0f41");
-    canvas.style("border-radius", "5px");
+    points.push(point);
+    quadTree.Insert(point);
+}
+function RenderPoints()
+{
+    for(let point of points)
+    {
+        point.Draw();
+    }
 }
 
 

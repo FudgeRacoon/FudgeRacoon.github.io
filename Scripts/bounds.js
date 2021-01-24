@@ -15,6 +15,8 @@ class Bounds
 
     Draw()
     {
+        stroke(255, 255, 255);
+        strokeWeight(1);
         noFill();
         rect(this.posX, this.posY, this.width, this.height);
     }
