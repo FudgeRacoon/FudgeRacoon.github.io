@@ -110,6 +110,7 @@ function ButtonPressed()
     button.addEventListener("click", function()
         {
             quadTree.Reset(quadTree.root);
+            quadTree.currentDepth = 0;
             points.splice(0, points.length);
         }
     )
