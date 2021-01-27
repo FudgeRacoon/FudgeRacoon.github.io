@@ -23,7 +23,7 @@
         <link rel="stylesheet" type="text/css" href="Styles/QuadTree.css">
     </head>
 
-    <body>  
+    <body oncontextmenu="return false;">  
 
         <header>
             <section class="title">
@@ -89,9 +89,9 @@
                     if true then they're transfered if false the other nodes will be checked.
                     <br>
                     <br>
-                    <strong>Press the left mouse button</strong> to draw a point in the scene below, and <strong>adjust the slider</strong>
-                    to configure the maximum number of points a single node can hold. <strong>Press the reset button</strong> if you want to
-                    start over.
+                    <strong>Press the left mouse button</strong> to draw a point in the scene below or the <strong>right mouse button</strong> 
+                    to remove a point from the tree, and <strong>adjust the slider</strong> to configure the maximum number of points a single 
+                    node can hold. <strong>Press the reset button</strong> if you want to start over.
                 </p>
 
                 <div class="drawing-container">
@@ -144,7 +144,7 @@
                 </p>
 
                 <div class="code-snippet">
-                    <img src="Images/Quad_Tree/Block_2/QuadTreeSplit_Snippet.png">
+                    <img src="Images/Quad_Tree/Block_3/QuadTreeSplit_Snippet.png">
                 </div>
 
                 <p>
@@ -156,8 +156,19 @@
                 </p>
 
                 <div class="code-snippet">
-                    <img src="Images/Quad_Tree/Block_2/QuadTreeInsert_Snippet.png" style="width: 100%;">
+                    <img src="Images/Quad_Tree/Block_3/QuadTreeInsert_Snippet.png" style="width: 100%;">
                 </div>
+
+                <p>
+                    If you haven't noticed already we're using BFS (Breadth first search) to traverse the tree and insert an object in it's appropriate node.
+                    We start by declaring a queue, then enqueuing the root node to that queue. Afterwards, we dequeue the node inline and check if the object 
+                    we passed is a leaf, is within it's boundary and has capacity to store one more object if all these conditions are valid then we can insert.
+                    However, if all conditions satisfy our statment but the object is not within the node's boundary then we grab another node from the queue.
+                    As you guessed it, if the node is not a leaf then we enqueue all it's children. Now, comes the tricky part. What if the node is a leaf and the
+                    object is within it's boundary but maximum capacity has been reached? This is when we call the split function and recursivly call the Insert function
+                    to insert all the current node's elements into it's children. Keep in mind, before we split we need to check if the maximum depth has been reached. If
+                    so we simply return, that way we ensure that the tree can no longer subdivide itself. 
+                </p>
             </section>
         </div>
 

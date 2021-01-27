@@ -1,12 +1,10 @@
-//Global variables
- //Containers    
-    var canvas;
-    var drawingContainer;
-    var slider;
-    var button;
- //Data structures
-    var quadTree;
-    var points;
+//Global variables 
+var canvas;
+var drawingContainer;
+var slider;
+var button;
+var quadTree;
+var points;
 
 function setup()
 {
@@ -21,12 +19,23 @@ function draw()
     background("#6f0f41");
 
     //Proccess Input
-    canvas.mousePressed(InsertPoint);
     ButtonPressed();
 
     //Render
     RenderPoints();
     quadTree.Render();
+}
+
+function mousePressed()
+{
+    if(mouseButton == LEFT)
+    {
+        InsertPoint();
+    }
+    else if(mouseButton == RIGHT)
+    {
+        RemovePoint();
+    }   
 }
 
 function InitCanvas()
@@ -50,7 +59,7 @@ function InitCanvas()
     slider.setAttribute("type", "range");
     slider.setAttribute("min", "1");
     slider.setAttribute("max", "10");
-    slider.setAttribute("value", "5");
+    slider.setAttribute("value", "1");
 
     //Make the slider a child of input container
     inputContainer.append(slider);
@@ -65,10 +74,29 @@ function InitCanvas()
 }
 function InsertPoint()
 {
-    let point = new Point(mouseX, mouseY);
+    let point = new Point(mouseX, mouseY, 10);
 
     points.push(point);
     quadTree.Insert(point);
+}
+function RemovePoint()
+{
+    for(let point of points)
+    {
+        let mousePos = {x: mouseX, y: mouseY};
+        let pointPos = {x: point.posX, y: point.posY};
+
+        let xDiff = mousePos.x - pointPos.x;
+        let yDiff = mousePos.y - pointPos.y;
+        let distance = Math.sqrt((xDiff * xDiff) + (yDiff * yDiff));
+
+        if(distance <= point.radius)
+        {
+            let index = points.indexOf(point);
+            points.splice(index, 1);
+            quadTree.Remove(point);
+        }
+    }
 }
 function RenderPoints()
 {
@@ -81,7 +109,7 @@ function ButtonPressed()
 {
     button.addEventListener("click", function()
         {
-            quadTree.Reset();
+            quadTree.Reset(quadTree.root);
             points.splice(0, points.length);
         }
     )

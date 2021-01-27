@@ -2,18 +2,20 @@ class Point
 {
     posX;
     posY;
+    radius;
 
-    constructor(posX, posY)
+    constructor(posX, posY, radius)
     {
         this.posX = posX;
         this.posY = posY;
+        this.radius = radius
     }
 
     Draw()
     {
         noStroke();
         fill("#FFFFFF");
-        circle(this.posX, this.posY, 5);
+        circle(this.posX, this.posY, this.radius);
     }
 }
 class Bounds

@@ -100,6 +100,46 @@ class QuadTree
         this.quadrants[2] = new Bounds(parseInt(min.x), parseInt(dimensions.y + min.y), parseInt(dimensions.x), parseInt(dimensions.y));
         this.quadrants[3] = new Bounds(parseInt(dimensions.x + min.x), parseInt(dimensions.y + min.y), parseInt(dimensions.x), parseInt(dimensions.y));
     }
+    Shake(node)
+    {
+        let numOfObjects = this.GetNumOfObjects(node);
+
+        if(numOfObjects == 0)
+        {
+            this.Reset(node);   
+        }
+        else if(numOfObjects <= slider.value)
+        {
+            let process = new Queue();
+            process.Push(node);
+
+            while(process.IsEmpty() == false)
+            {
+                let processing = process.Pop();
+
+                if(this.IsLeaf(processing) == false)
+                {
+                    process.Push(processing.nwChild);
+                    process.Push(processing.neChild);
+                    process.Push(processing.swChild);
+                    process.Push(processing.seChild);
+                }
+                else
+                {
+                    if(processing.data.length > 0 )
+                    {
+                        for(let i = 0; i < processing.data.length; i++)
+                        {
+                            node.data.push(processing.data[i]);
+                        }
+                    }
+                }
+            }
+
+            this.currentDepth--;
+            this.Reset(node);
+        }
+    }
 
     Insert(object)
     {
@@ -150,6 +190,45 @@ class QuadTree
             }
         }
     }
+    Remove(object)
+    {
+        let process = new Queue();
+        process.Push(this.root);
+
+        let parent = null;
+
+        while(process.IsEmpty() == false)
+        {
+            let processing = process.Pop();
+
+            if(this.IsLeaf(processing) == false)
+            {
+                parent = processing;
+
+                process.Push(processing.nwChild);
+                process.Push(processing.neChild);
+                process.Push(processing.swChild);
+                process.Push(processing.seChild);
+            }
+            else if(this.IsLeaf(processing) && this.InBoundry(object, processing))
+            {
+                for(let i = 0; i < processing.data.length; i++)
+                {
+                    if(processing.data[i] === object)
+                    {
+                        processing.data.splice(i, 1);
+                        this.Shake(parent);
+                        return;
+                    }
+                }
+            }
+        }
+    }
+    Update(object)
+    {
+        this.Remove(object);
+        this.Insert(object);
+    }
     Render()
     {
         let process = new Queue();
@@ -170,11 +249,11 @@ class QuadTree
             processing.nodeBounds.Draw();
         }
     }
-    Reset()
+    Reset(node)
     {
-        this.root.nwChild = null;
-        this.root.neChild = null;
-        this.root.swChild = null;
-        this.root.seChild = null;
+        node.nwChild = null;
+        node.neChild = null;
+        node.swChild = null;
+        node.seChild = null;
     }
 }
