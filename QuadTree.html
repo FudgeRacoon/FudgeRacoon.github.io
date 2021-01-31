@@ -16,7 +16,6 @@
         <link rel="icon" href="Icon/Icon.png" type="image/x-icon">
         
         <!--Scripts-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
         <script src="Libs/p5.js"></script>
 
         <!--StyleSheet-->
@@ -62,7 +61,7 @@
                 </p>
 
                 <div class="scene">
-                    <img src="Images/Quad_Tree/Block_1/Nodes.png" data-depth="0.5">
+                    <img src="Images/Quad_Tree/Block_1/Nodes.png">
                 </div>
 
                 <p>
@@ -144,7 +143,7 @@
                 </p>
 
                 <div class="code-snippet">
-                    <img src="Images/Quad_Tree/Block_3/QuadTreeSplit_Snippet.png">
+                    <img src="Images/Quad_Tree/Block_3/QuadTreeSplit_Snippet.png" style="width: 60%;">
                 </div>
 
                 <p>
@@ -185,8 +184,29 @@
                 </div>
 
                 <p>
-
+                    As the name says, the shake function shakes the tree forcing it to drop it's empty leaves that are unnecessary to be present. This means if the
+                    total number of objects within a node's children is less than the maximum number of objects permitted per node the current child nodes are eliminated, 
+                    and the node becomes a leaf. And that's exactly what the above function does, we pass in the parent node where an object was removed from one of it's
+                    children. Afterwards we obtain the total number of objects below that parent and if their count is less than the maximum allowed we transfer all objects
+                    contained inside the children node to the parent node, decrement the current depth and Reset (Delete the children and assign the parent's child pointers to null).
                 </p>
+            </section>
+
+            <section>
+                <header>
+                    <h3>
+                        Query
+                    </h3>
+                </header>
+
+                <p>
+                    Now that we have all the core functionalities set up it's time to actually make the quad tree do what it's supposed to do and that is improve 
+                    performance when it comes to collision checks. Before we jump into the code let's see how a quad tree signficantly optimizes performance.
+                </p>
+
+                <div class="drawing-container">
+
+                </div>
             </section>
         </div>
 
@@ -198,16 +218,6 @@
        <script src="Scripts/Geometry.js"></script>
        <script src="Scripts/queue.js"></script>
        <script src="Scripts/quadTree.js"></script>
-       <script src="Scripts/quadTreeVisulization_1.js"></script>
-       
-       <script type="text/javascript">
-            let scenes = document.getElementsByClassName("scene");
-            
-            for(let scene of scenes)
-            {
-                let parallaxInstance = new Parallax(scene);
-            }
-       </script>
-
+       <script src="Scripts/quadTreeVisulization.js"></script>
     </body>
 </html>

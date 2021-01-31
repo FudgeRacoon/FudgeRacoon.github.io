@@ -28,15 +28,14 @@ class QuadTree
     currentDepth;
     maxDepth;
     quadrants;
+    MAX_NUM_OF_OBJECTS;
 
     /***Constructor***/
-    constructor(maxDepth)
+    constructor(maxDepth, canvasSize)
     {
         this.currentDepth = 0;
         this.maxDepth = maxDepth;
         this.quadrants = new Array(4);
-
-        let canvasSize = canvas.size();
 
         let boundary = new Bounds(0, 0, canvasSize.width, canvasSize.height);
         this.root = new QuadTreeNode(boundary);
@@ -108,7 +107,7 @@ class QuadTree
         {
             this.Reset(node);   
         }
-        else if(numOfObjects <= slider.value)
+        else if(numOfObjects <= this.MAX_NUM_OF_OBJECTS)
         {
             let process = new Queue();
             process.Push(node);
@@ -140,6 +139,10 @@ class QuadTree
             this.Reset(node);
         }
     }
+    ChangeMax(maxNumOfObjs)
+    {
+        this.MAX_NUM_OF_OBJECTS = maxNumOfObjs;
+    }
 
     Insert(object)
     {
@@ -150,7 +153,7 @@ class QuadTree
         {
             let processing = process.Pop();
 
-            if(this.IsLeaf(processing) && this.InBoundry(object, processing) && (processing.data.length + 1 > slider.value))
+            if(this.IsLeaf(processing) && this.InBoundry(object, processing) && (processing.data.length + 1 > this.MAX_NUM_OF_OBJECTS))
             {
                 if(this.currentDepth >= this.maxDepth)
                     return;

@@ -82,12 +82,15 @@ header .info a{
     border-bottom: 2px solid #ccc;
 }
 .container-1 section .code-snippet img{
-    width: 60%;
+    width: 55%;
     padding: 10px;
 }
 .container-1 section .drawing-container .input-container{
     text-align: center;
     padding: 20px;
+}
+.container-1 section .drawing-container .input-container p{
+    padding: 0;
 }
 
 /*Footer Styles*/
