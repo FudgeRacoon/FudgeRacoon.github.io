@@ -225,6 +225,7 @@ let sketch2 = function(p)
 
         //Generate points
         p.GeneratePoints();
+
     }
 
     p.draw = function()

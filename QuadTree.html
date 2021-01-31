@@ -207,6 +207,18 @@
                 <div class="drawing-container">
 
                 </div>
+
+                <p>
+                    In the scene above we have a thousand particles in continous motion. Whenever a particle collides with another, their color changes to black.
+                    However, this is a large number of particles with a pairwise comparison algorithm (double for loop) checking if collisions are occuring. This results 
+                    in a O(n^2) time complexity, causing the number of n checks to increase quadratically which is pretty terrible and you can see that from the fps counter. 
+                    Now Imagine if we're doing the same collision check in a 3D world consisting of thousands of objects with textures and shaders. This is where a quad tree
+                    comes into play.
+                </p>
+
+                <div class="drawing-container">
+                    
+                </div>
             </section>
         </div>
 
