@@ -219,6 +219,24 @@
                 <div class="visualization">
                     <video src="Videos/High fps.mp4" type="video/mp4" autoplay muted loop></video>
                 </div>
+
+                <p>
+                    After creating a quad tree for the same scene and inserting every particle inside of it you can see that the we got a signficant performance boost. By using
+                    the query function, we loop through all the points within our scene and pass them to our function. We then obtain the points that are stored in the same node
+                    the passed point is or in other words the points that have a high chance of colliding with our passed point and return it for starting our collision checks. 
+                    That way we reduced our checks from 1000^2 checks to a reduced number that depends on how many objects a single node can store. Let's take a look on how to
+                    implement the query function.
+                </p>
+
+                <div class="code-snippet">
+                    <img src="Images/Quad_Tree/Block_4/QuadTreeQuery_Snippet.png" style="width: 60%;">
+                </div>
+
+                <p>
+                    And that's it! That's how to implement a fully functional quad tree for spatial partitioning. I should note that there are various other quad tree applications not
+                    limited to improving performance for collision checks. Some common uses of the quad tree data structure are image processing, image representation and mesh generation 
+                    a topic I will most probably write a tutorial for in the near future. For now try to implement the quad tree yourself!
+                </p>
             </section>
         </div>
 
