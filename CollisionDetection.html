@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Title-->
+    <title>Collision Detection</title>
+
+    <!--Meta tags-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <!--Icons-->
+    <link rel="icon" href="Icon/Icon.png" type="image/x-icon">
+
+    <!--Scripts-->
+    <script src="Libs/p5.js"></script>
+
+    <!--StyleSheet-->
+    <link rel="stylesheet" type="text/css" href="Styles/CollisionDetection.css"> 
+</head>
+
+<body>
+
+    <header>
+        <section class="title">
+            <h1>Collision Detection</h1>
+        </section>
+        <section class="info">
+            <a href="index.html">Fudge's Tutorials</a>
+        </section>
+    </header>
+
+    <div class="container-1">
+        <section>
+            <p>
+                Having objects in a video game or a physics simulation unable to interact with one another means they 
+                can go through each other or in other words interpenetrate each other which is not desired in many cases.
+                To actually simulate realism of interaction between objects we have to check if they collide with one another
+                and if they are we have to resolve this collision, such as applying forces that alter their velocites, so that they
+                move in the opposite directions. However, this tutorial will be purely discussing collision checks algorithms with 
+                collision resolution discussed in a seperate tutorial.
+            </p>
+        </section>
+
+        <section>
+            <header>
+                <h3>Axis-Aligned Bounding Box</h3>
+            </header>
+
+            <p>
+                One of the simplest collision checks is the Axis-Aligned bounding box or AABB for short. It works by generating
+                an axis aligned (meaning all of it's edges are parallel to both axis the x and y) rectangle around an object and 
+                ensures there is no gap between any of the 4 sides of the rectangle aganist another rectangle. If any gap exists 
+                then no collision occured.
+                <br>
+                <br>
+                <strong>Move the arrow keys</strong> to move around the rectangle. If they collide with one another their color will
+                change to black, else their color will return back to white.
+            </p>
+
+            <div class="drawing-container">
+
+            </div>
+
+            <p>
+                To implement this is fairly straight-forward, just a single if condition in C++ and it'll work like a charm.
+            </p>
+
+            <div class="code-snippet">
+                <img src="Images/Collision_Detection/Block_1/CollisionDetectionAABB_Snippet.png" style="width: 45%;">
+            </div>
+
+            <p>
+                In order to check if two AABBs intersect, we need to preform checks to see if their projections are intersecting
+                one another and that's exactly what we're doing in the above code. 
+            </p>
+        </section>
+
+        <section>
+            <header>
+                <h3>Circle Vs Circle</h3>
+            </header>
+
+            <p>
+                Similar to AABB checking for collision between two circles is just as easy as it gets. All we need to
+                do is check if the length of a line going from the center of circle to the center of another circle is less 
+                than the sum of the two circles' radii, if true they intersect.
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <h3>&copy; Copyright 2021 FudgeRacoon</h3>
+    </footer>
+
+    <!--Scripts-->
+    <script src="Scripts/CollisionDetection/AABBVisulization.js"></script>
+    <script src="Scripts/CollisionDetection/AABB.js"></script>
+</body>
+</html>
