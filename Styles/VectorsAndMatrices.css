@@ -24,7 +24,7 @@ body{
 /*Header Styles*/
 header{
     text-align: center;
-    
+
     padding: 20px;
 
     width: 100%;
@@ -32,6 +32,7 @@ header{
 
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' %3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(185,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23801250'/%3E%3Cstop offset='1' stop-color='%23ff0f0f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpattern id='b' width='48' height='48' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%23ffffff' cx='24' cy='24' r='24'/%3E%3C/pattern%3E%3Crect width='100%25' height='100%25' fill='url(%23a)'/%3E%3Crect width='100%25' height='100%25' fill='url(%23b)' fill-opacity='0.12'/%3E%3C/svg%3E");
     background-size: cover;
+
     border-bottom: 2px solid black;
 }
 header .title h1{
@@ -49,10 +50,10 @@ header .info a{
 /*Container-1 Styles*/
 .container-1 section{
     display: block;
-    text-align: justify;
     
-    margin: auto;
+    text-align: justify;
 
+    margin: auto;
     width: 800px;
 }
 .container-1 section header{
@@ -75,34 +76,10 @@ header .info a{
 .container-1 section .scene img{
     width: 100%;
 }
-.container-1 section .code-snippet{
-    margin-right: 30px;
-    margin-left: 30px;
 
-    border-top: 2px solid #ccc;
-    border-bottom: 2px solid #ccc;
-}
-.container-1 section .code-snippet img{
-    width: 55%;
-    padding: 10px;
-}
-.container-1 section .visualization video{
-    display: block;
-    margin: auto;
-    width: 60%;
-}
-.container-1 section .drawing-container .input-container{
-    text-align: center;
-    padding: 20px;
-}
-.container-1 section .drawing-container .input-container p{
-    padding: 0;
-}
-
-/*Footer Styles*/
 footer{
     padding: 37px;
-
+    
     width: 100%;
     height: auto;
 
@@ -114,82 +91,4 @@ footer{
 footer h3{
     color: #FFF7F6;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
-}
-
-/*Slider Styles*/
-input[type=range] {
-    display: inline-block;
-    margin: 5px;
-    width: 50%;
-    background-color: transparent;
-    -webkit-appearance: none;
-}
-input[type=range]:focus {
-    outline: none;
-}
-input[type=range]::-webkit-slider-runnable-track {
-    background: #ffffff;
-    border: 2px solid #000101;
-    border-radius: 25px;
-    width: 100%;
-    height: 6.9px;
-    cursor: pointer;
-}
-input[type=range]::-webkit-slider-thumb {
-    margin-top: -8.55px;
-    width: 20px;
-    height: 20px;
-    background: #6f0f41;
-    border: 2px solid #000000;
-    border-radius: 50px;
-    cursor: pointer;
-    -webkit-appearance: none;
-}
-input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #ffffff;
-}
-
-/*Button Styles*/
-input[type=button]{
-    display: inline-block;
-
-    margin: 5px;
-    padding: 5px;
-
-    color: #ffffff;
-    background: #6f0f41;
-    border: solid #000000 3px;
-}
-  
-@media (max-width: 1000px){
-    html{
-        background-color: #ffffff;
-        background-image: none;
-    }
-
-    body{
-        width: 100%;
-        background-color: #ffffff;
-    }
-
-    header .title h1{
-        font-size: 2.5em;
-    }
-    header .info a{
-        font-size: 1.15em;
-    }
-
-    .container-1 section{
-        width: 100%;
-    }
-    .container-1 section header h3{
-        font-size: 1.15em;
-    }
-    .container-1 section p{
-        font-size: 1em;
-    }
-
-    footer h3{
-        font-size: 1em;
-    }
 }
